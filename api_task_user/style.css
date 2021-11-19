@@ -1,0 +1,11 @@
+.title {
+  text-align: center;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px;
+  border: solid 2px black;
+}
