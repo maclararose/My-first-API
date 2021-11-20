@@ -12,9 +12,9 @@
   </head>
   <body>
     <h1 class="title">Home Page</h1>
-    <form accept-charset="UTF-8" action="http://localhost:3001/todos" method="post" id="form_todo">
-      <input type="text" name="todo[task]" value="Example" />
-      <input type="submit" value="Submit" onclick="window.sendForm(event)"/>
+    <form accept-charset="UTF-8" action="http://localhost:3001/todos" method="post" id="form-todo">
+      <input type="text" name="todo[task]" value="Example" id="form-todo__input"/>
+      <input type="submit" value="Submit" onclick="window.sendForm(event)" id="form-todo__input form-todo__input--submit"/>
     </form>
     <div class="container" id="container"></div>
   </body>
