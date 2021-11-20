@@ -15,4 +15,20 @@ function getTasks() {
   xhttp.send();
 };
 
+window.sendForm = function(event) {
+  event.preventDefault();
+  var xhttp = new this.XMLHttpRequest();
+
+  xhttp.open("POST", "http://localhost:3001/todos", true);
+  xhttp.onload = function(event) {
+    let container = document.getElementById("container");
+    let responses = JSON.parse(event.target.response);
+
+    container.insertAdjacentHTML("beforeend", `[${responses.id}]: ${responses.task} <br/>`);
+  };
+
+  var formData = new this.FormData(document.getElementById("form_todo"));
+  xhttp.send(formData);
+};
+
 getTasks();
