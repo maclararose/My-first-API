@@ -6,7 +6,7 @@ function getTasks() {
       let responses = JSON.parse(this.responseText);
 
       for(var i = 0; i < responses.length ; i++) {
-        container.insertAdjacentHTML("beforeend", createResponse(responses[i]));
+        container.insertAdjacentHTML("afterbegin", createResponse(responses[i]));
       };
     };
   };
@@ -24,19 +24,20 @@ window.sendForm = function(event) {
     let container = document.getElementById("container");
     let responses = JSON.parse(event.target.response);
 
-    container.insertAdjacentHTML("beforeend", createResponse(responses));
+    container.insertAdjacentHTML("afterbegin", createResponse(responses));
   };
 
   var formData = new this.FormData(document.getElementById("form-todo"));
   xhttp.send(formData);
-  document.getElementById("form-todo__input").value = "";
+  document.getElementById("task_input").value = "";
 };
 
 function createResponse(response) {
   return(
-    `<div class="task" id="${response.id}" onclick="deleteResponse('${response.id}')">`+
-      `[${response.id}]: ${response.task} <br />`+
-    `</div>`
+    `<div class="task" id="${response.id}" onclick="deleteResponse('${response.id}')">
+      [${response.id}]: ${response.task} 
+      <br/>
+    </div>`
   );
 };
 
