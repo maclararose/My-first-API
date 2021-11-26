@@ -34,8 +34,21 @@ window.sendForm = function(event) {
 
 function createResponse(response) {
   return(
-    `<div class="task" id="${response.id}" onclick="deleteResponse('${response.id}')">
-      [${response.id}]: ${response.task} 
+    `<div class="task" id="${response.id}"">
+        <table class="table table-striped">
+          <thead>
+            <th scope="col">ID</th>
+            <th scope="col">Task Description</th>
+            <th scope="col">Actions</th>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">${response.id}</th>
+              <th>${response.task}</th>
+              <th><button class="btn btn-danger" onclick="deleteResponse(${response.id})">Delete</button></th>
+            </tr>
+          </tbody>
+        </table>
       <br/>
     </div>`
   );

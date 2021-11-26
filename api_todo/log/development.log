@@ -4209,3 +4209,1098 @@ Processing by TodosController#index as */*
 Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 1278)
 
 
+Started POST "/todos" for ::1 at 2021-11-22 17:18:45 -0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"task"=>"Create a new post for instagram"}}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (0.4ms)[0m  [1m[32mINSERT INTO "todos" ("task", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["task", "Create a new post for instagram"], ["created_at", "2021-11-22 20:18:45.021823"], ["updated_at", "2021-11-22 20:18:45.021823"]]
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (134.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+Completed 201 Created in 158ms (Views: 1.1ms | ActiveRecord: 135.2ms | Allocations: 4673)
+
+
+Started DELETE "/todos/32" for ::1 at 2021-11-22 17:18:46 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"32"}
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 32], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.7ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 32]]
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (175.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 190ms (ActiveRecord: 177.3ms | Allocations: 3971)
+
+
+Started POST "/todos" for ::1 at 2021-11-22 17:51:43 -0300
+Started POST "/todos" for ::1 at 2021-11-22 17:51:43 -0300
+Processing by TodosController#create as */*
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"task"=>""}}
+  Parameters: {"todo"=>{"task"=>""}}
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (144.6ms)[0m  [1m[32mINSERT INTO "todos" ("task", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["task", ""], ["created_at", "2021-11-22 20:51:44.325601"], ["updated_at", "2021-11-22 20:51:44.325601"]]
+  [1m[36mTodo Create (6244.0ms)[0m  [1m[32mINSERT INTO "todos" ("task", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["task", ""], ["created_at", "2021-11-22 20:51:44.332459"], ["updated_at", "2021-11-22 20:51:44.332459"]]
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (512.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+Completed 201 Created in 7403ms (Views: 1.6ms | ActiveRecord: 741.6ms | Allocations: 6864)
+
+
+Completed 500 Internal Server Error in 7065ms (ActiveRecord: 6250.2ms | Allocations: 6802)
+
+
+  
+ActiveRecord::StatementInvalid (SQLite3::BusyException: database is locked):
+  
+app/controllers/todos_controller.rb:20:in `create'
+Started DELETE "/todos/41" for ::1 at 2021-11-22 17:51:57 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"41"}
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 41], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.7ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 41]]
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (606.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 621ms (ActiveRecord: 607.7ms | Allocations: 3305)
+
+
+Started DELETE "/todos/undefined" for ::1 at 2021-11-22 17:51:58 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"undefined"}
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.6ms | Allocations: 470)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Todo with 'id'=undefined):
+  
+app/controllers/todos_controller.rb:44:in `set_todo'
+Started GET "/todos" for ::1 at 2021-11-23 21:55:12 -0300
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 36ms (Views: 6.0ms | ActiveRecord: 0.7ms | Allocations: 5927)
+
+
+Started GET "/todos" for ::1 at 2021-11-23 21:57:26 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-23 21:57:29 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.2ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-23 22:06:37 -0300
+Processing by TodosController#index as */*
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 6.0ms | ActiveRecord: 0.7ms | Allocations: 1843)
+
+
+Started GET "/todos" for ::1 at 2021-11-23 22:06:38 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-23 22:06:43 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:49:56 -0300
+  [1m[35m (31.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 82ms (Views: 6.0ms | ActiveRecord: 0.6ms | Allocations: 5927)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:50:13 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:50:20 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.9ms | ActiveRecord: 0.4ms | Allocations: 1297)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:50:32 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:18 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:19 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.5ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:19 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:20 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:44 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:44 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:46 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:46 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:48 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (1.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 1.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:48 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 1.8ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:57 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:57 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:51:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:51:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:54:59 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:54:59 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.7ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:55:01 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:55:01 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:55:06 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.9ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.9ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:55:07 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:55:11 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:55:11 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:56:45 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:56:45 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:56:47 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:56:47 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 14ms (Views: 12.7ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:56:49 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:56:49 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:57:38 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 1279)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:57:38 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:57:41 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:57:41 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:57:46 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:57:47 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.3ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:57:51 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.6ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:57:51 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 10.0ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:57:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.6ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:57:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 17:58:13 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 17:58:14 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:42:25 -0300
+  [1m[35m (41.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/todos" for ::1 at 2021-11-26 18:42:26 -0300
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+Processing by TodosController#index as */*
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Completed 200 OK in 45ms (Views: 15.3ms | ActiveRecord: 2.4ms | Allocations: 6238)
+
+
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 25ms (Views: 11.0ms | ActiveRecord: 13.8ms | Allocations: 5440)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:42:56 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1297)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:42:56 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:42:59 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 1297)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:42:59 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:43:00 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 4.7ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:43:00 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 6.7ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:45:07 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:45:07 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:51:01 -0300
+Processing by TodosController#index as */*
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 21ms (Views: 20.4ms | ActiveRecord: 2.1ms | Allocations: 1844)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:51:01 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:51:04 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:51:04 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:51:06 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:51:07 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:51:32 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:51:33 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.7ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.7ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:51:35 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:51:35 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:56:11 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:56:11 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:56:21 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:56:21 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:56:21 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:59:34 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:59:34 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:59:36 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:59:36 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:59:43 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:59:43 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 17ms (Views: 15.4ms | ActiveRecord: 0.6ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:59:50 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:59:50 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.6ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 18:59:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 18:59:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:09 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:09 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:14 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:14 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.2ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:28 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:29 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:37 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:37 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:45 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:45 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:53 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 6ms (Views: 5.3ms | ActiveRecord: 0.2ms | Allocations: 1279)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:53 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 9.2ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:55 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.2ms | Allocations: 1279)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:56 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:57 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:58 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:00:59 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.5ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:00:59 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:01:02 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:03 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.6ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.6ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:01:04 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:04 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:01:20 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:20 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:01:24 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:24 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:33 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (263.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 273ms (Views: 8.6ms | ActiveRecord: 263.8ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:01:36 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.6ms | ActiveRecord: 0.3ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:38 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:01:43 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.2ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:01:43 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:02:08 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.2ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:02:08 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:02:13 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:02:13 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:02:22 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:02:22 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:02:24 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:02:24 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:02:31 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:02:31 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:02:32 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:02:32 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.5ms | Allocations: 1279)
+
+
+Started DELETE "/todos/38" for ::1 at 2021-11-26 19:02:34 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"38"}
+  [1m[36mTodo Load (251.8ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 38], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.8ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 38]]
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (214.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 1098ms (ActiveRecord: 467.3ms | Allocations: 5285)
+
+
+Started POST "/todos" for ::1 at 2021-11-26 19:03:17 -0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"task"=>"Ouvir música"}}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (1.3ms)[0m  [1m[32mINSERT INTO "todos" ("task", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["task", "Ouvir música"], ["created_at", "2021-11-26 22:03:18.336998"], ["updated_at", "2021-11-26 22:03:18.336998"]]
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (205.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+Completed 201 Created in 225ms (Views: 0.5ms | ActiveRecord: 206.9ms | Allocations: 4207)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:03:41 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 5ms (Views: 4.0ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:03:41 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.4ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:03:45 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 4.8ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for 127.0.0.1 at 2021-11-26 19:03:45 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.5ms | Allocations: 1278)
+
+
+Started POST "/todos" for ::1 at 2021-11-26 19:06:53 -0300
+Processing by TodosController#create as */*
+  Parameters: {"todo"=>{"task"=>""}}
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTodo Create (0.3ms)[0m  [1m[32mINSERT INTO "todos" ("task", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["task", ""], ["created_at", "2021-11-26 22:06:53.514837"], ["updated_at", "2021-11-26 22:06:53.514837"]]
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (534.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:20:in `create'
+Completed 201 Created in 548ms (Views: 1.3ms | ActiveRecord: 534.6ms | Allocations: 4006)
+
+
+Started DELETE "/todos/43" for ::1 at 2021-11-26 19:06:58 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.4ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 43]]
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (96.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 106ms (ActiveRecord: 97.3ms | Allocations: 3840)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:08:03 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:08:05 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2021-11-26 19:08:06 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
