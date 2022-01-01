@@ -34,7 +34,7 @@ window.sendForm = function(event) {
 
 function createResponse(response) {
   return(
-    `<div class="task" id="${response.id}"">
+    `<div class="task" id="${response.id}">
         <table class="table table-striped">
           <thead>
             <th scope="col">ID</th>
