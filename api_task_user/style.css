@@ -1,5 +1,10 @@
+body{
+  background-color: rgb(80, 150, 219);
+}
+
 .title {
   text-align: center;
+  color: white;
   margin: 25px;
 }
 
@@ -13,9 +18,16 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  color: white;
   margin: 15px;
 }
 
 input {
   margin: 10px;
+  border-radius: 5px;
+  border: none;
+}
+
+#task_input:hover{
+  background-color: rgb(177, 174, 174);
 }

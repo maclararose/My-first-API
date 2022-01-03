@@ -11,7 +11,7 @@ function getTasks() {
     };
   };
 
-  xhttp.open("GET", "http://localhost:3001/todos", true);
+  xhttp.open("GET", "http://localhost:3000/todos", true);
   xhttp.send();
 };
 
@@ -19,7 +19,7 @@ window.sendForm = function(event) {
   event.preventDefault();
   var xhttp = new this.XMLHttpRequest();
 
-  xhttp.open("POST", "http://localhost:3001/todos", true);
+  xhttp.open("POST", "http://localhost:3000/todos", true);
   xhttp.onload = function(event) {
     let container = document.getElementById("container");
     let responses = JSON.parse(event.target.response);
@@ -56,7 +56,7 @@ function createResponse(response) {
 
 function deleteResponse(response_id) {
   var xhttp = new XMLHttpRequest();
-  xhttp.open("DELETE", `http://localhost:3001/todos/${response_id}`, true);
+  xhttp.open("DELETE", `http://localhost:3000/todos/${response_id}`, true);
   xhttp.onload = function() {
     let target = document.getElementById(response_id);
     target.parentNode.removeChild(target);

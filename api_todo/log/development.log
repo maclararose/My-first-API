@@ -5304,3 +5304,86 @@ Processing by TodosController#index as */*
 Completed 200 OK in 3ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 1278)
 
 
+Started GET "/todos" for ::1 at 2022-01-03 02:07:06 -0300
+Started GET "/todos" for ::1 at 2022-01-03 02:07:06 -0300
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by TodosController#index as */*
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.5ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 64ms (Views: 27.3ms | ActiveRecord: 0.5ms | Allocations: 7869)
+
+
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 1.4ms | Allocations: 4811)
+
+
+Started GET "/todos" for ::1 at 2022-01-03 02:07:10 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.3ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.3ms | Allocations: 1297)
+
+
+Started GET "/todos" for ::1 at 2022-01-03 02:07:12 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.2ms | Allocations: 1298)
+
+
+Started GET "/todos" for ::1 at 2022-01-03 02:07:13 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.2ms | Allocations: 1298)
+
+
+Started GET "/todos" for ::1 at 2022-01-03 02:07:14 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.2ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 3ms (Views: 3.0ms | ActiveRecord: 0.2ms | Allocations: 1278)
+
+
+Started GET "/todos" for ::1 at 2022-01-03 02:07:22 -0300
+Processing by TodosController#index as */*
+  [1m[36mTodo Load (0.1ms)[0m  [1m[34mSELECT "todos".* FROM "todos"[0m
+  ↳ app/controllers/todos_controller.rb:8:in `index'
+Completed 200 OK in 2ms (Views: 2.1ms | ActiveRecord: 0.1ms | Allocations: 1278)
+
+
+Started DELETE "/todos/42" for ::1 at 2022-01-03 02:14:45 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"42"}
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTodo Load (2.0ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 42], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.2ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 42]]
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (492.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 623ms (ActiveRecord: 494.6ms | Allocations: 5839)
+
+
+Started DELETE "/todos/40" for ::1 at 2022-01-03 02:14:49 -0300
+Processing by TodosController#destroy as */*
+  Parameters: {"id"=>"40"}
+  [1m[36mTodo Load (0.4ms)[0m  [1m[34mSELECT "todos".* FROM "todos" WHERE "todos"."id" = ? LIMIT ?[0m  [["id", 40], ["LIMIT", 1]]
+  ↳ app/controllers/todos_controller.rb:44:in `set_todo'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTodo Destroy (0.5ms)[0m  [1m[31mDELETE FROM "todos" WHERE "todos"."id" = ?[0m  [["id", 40]]
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+  [1m[36mTRANSACTION (323.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/todos_controller.rb:38:in `destroy'
+Completed 204 No Content in 368ms (ActiveRecord: 324.1ms | Allocations: 3956)
+
+
